@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HUELLITAS | Conciencia, Acción y Recursos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pequeñas personalizaciones de diseño */
+    /* Color de acento personalizado (#b8fa9d) */
+    .brand { background: linear-gradient(90deg, #b8fa9d, #8ef26d); } /* Gradiente sutil con el nuevo color */
+    .card { box-shadow: 0 6px 18px rgba(17,24,39,0.08); transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-3px); }
+    
+    /* ESTILOS CLAVE: El color de los botones y acentos ahora es #b8fa9d */
+    .accent-bg { background-color: #b8fa9d; }
+    .accent-text { color: #10b981; } /* Un verde oscuro complementario para el texto */
+    .accent-border { border-color: #b8fa9d; }
+    .nav-btn.active { background-color: #b8fa9d; color: #1f2937; font-weight: 600; } /* Fondo del botón activo */
+    .nav-btn:not(.active):hover { background-color: #f3f4f6; } /* Hover en botones inactivos */
+    .main-btn:hover { background-color: #8ef26d; } /* Hover más oscuro para botones principales */
+    .title-border { border-color: #b8fa9d; } /* Borde del título */
+
+    /* Tailwind customización para asegurar que los colores se carguen */
+    .bg-custom-green { background-color: #b8fa9d; }
+    .hover\:bg-custom-green-dark:hover { background-color: #8ef26d; }
+    .text-custom-green-dark { color: #10b981; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow-lg sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full brand flex items-center justify-center overflow-hidden">
+          <img src="huellita.jpg" alt="Logo Huellitas" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="text-xl font-bold text-gray-900">AMIGO HUELLITAS</h1>
+          <p class="text-xs text-gray-500">Conciencia, acción y recursos</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex gap-1">
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="inicio">Inicio</button>
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="sobre">Problemática</button>
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="ayuda">Cómo Ayudar</button>
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="estadisticas">Estadísticas</button>
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="galeria">Galería</button>
+        <button class="nav-btn px-4 py-2 rounded text-sm hover:bg-gray-100" data-target="contacto">Contacto</button>
+      </nav>
+
+      <div class="md:hidden">
+        <select id="mobile-nav" class="border border-gray-300 rounded p-2 text-sm bg-white">
+          <option value="inicio">Inicio</option>
+          <option value="sobre">Problemática</option>
+          <option value="ayuda">Cómo Ayudar</option>
+          <option value="estadisticas">Estadísticas</option>
+          <option value="galeria">Galería</option>
+          <option value="recursos">Recursos</option>
+          <option value="contacto">Contacto</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-6">
+
+    <section id="inicio" class="route pt-8">
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4 border-b-2 title-border pb-2">Bienvenido a Amigo Huellitas</h2>
+          
+          <p class="text-lg text-gray-700 mb-6">Este proyecto escolar busca **informar, movilizar y facilitar acciones concretas** para reducir el número de animales en situación de calle en México.</p>
+          
+          <img src="perritos.jpg" alt="Ilustración perros y gatos" class="rounded-xl shadow-lg mb-6">
+
+          <h3 class="text-2xl font-semibold text-gray-800 mb-3">Nuestros Pilares de Acción:</h3>
+          <ul class="space-y-3 pl-6 text-lg">
+            <li class="flex items-start gap-3"><span class="accent-text font-bold text-2xl">•</span> <div><strong class="accent-text">Educación:</strong> Promover campañas para la tenencia responsable de mascotas.</div></li>
+            <li class="flex items-start gap-3"><span class="accent-text font-bold text-2xl">•</span> <div><strong class="accent-text">Esterilización:</strong> Organizar jornadas a bajo costo o gratuitas.</div></li>
+            <li class="flex items-start gap-3"><span class="accent-text font-bold text-2xl">•</span> <div><strong class="accent-text">Rescate y Adopción:</strong> Conectar a rescatistas con hogares responsables y amorosos.</div></li>
+          </ul>
+
+          <div class="mt-8 flex gap-4">
+            <button class="main-btn px-6 py-3 rounded-full bg-custom-green text-gray-900 font-bold text-lg hover:bg-custom-green-dark transition" data-target="ayuda">¡Quiero Ayudar!</button>
+            <button class="px-6 py-3 rounded-full border border-gray-300 bg-white hover:bg-gray-200 transition" data-target="estadisticas">Ver Estadísticas</button>
+          </div>
+        </div>
+
+        <aside class="bg-white p-6 rounded-xl card lg:sticky lg:top-24">
+          <h3 class="font-bold text-xl mb-3 accent-text">Caso Destacado</h3>
+          <p class="text-sm text-gray-700 mb-4">El proyecto "Amigo Huellitas" busca reducir el número de animales de calle en una colonia de **Almoloya de Juárez** mediante jornadas de esterilización en los próximos 12 meses.</p>
+          <img src="esterilizacion.jpg" alt="Caso destacado: perrito y esterilización" class="w-full rounded-lg mt-4 shadow-md" />
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre" class="route hidden pt-8">
+      <h2 class="text-3xl font-bold mb-6 border-b-2 title-border pb-2">Sobre la Problemática Animal</h2>
+      <p class="text-lg text-gray-700 mb-6">La presencia de animales en situación de calle es una problemática multifacética que afecta tanto al **bienestar animal** como a la sociedad en general. Los perros y gatos callejeros viven en condiciones precarias, sin acceso a alimento, agua limpia ni atención veterinaria, lo que los hace vulnerables a enfermedades, accidentes y maltrato. Además, enfrentan peligros constantes como el tráfico y el clima extremo.</p>
+      
+      <div class="flex justify-center mb-6">
+        <img src="calle.jpg" alt="Animal en situación de calle" class="rounded-xl shadow-lg" style="width: 280px; height: 280px; object-fit: cover;" />
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-xl card">
+          <h3 class="font-bold text-xl mb-3 accent-text">Causas Principales</h3>
+          <ul class="list-disc pl-5 mt-2 text-gray-700 space-y-2">
+            <li><strong class="text-gray-900">Falta de Esterilización Accesible:</strong> La dificultad para costear la esterilización resulta en una sobrepoblación y más animales callejeros.</li>
+            <li><strong class="text-gray-900">Desinformación y Tenencia Irresponsable:</strong> El desconocimiento de los cuidados y compromisos a largo plazo que implica una mascota, lo que fomenta el abandono.</li>
+            <li><strong class="text-gray-900">Abandono por Razones Económicas o de Vivienda:</strong> Las dificultades financieras o mudanzas son causas frecuentes del abandono.</li>
+            <li><strong class="text-gray-900">Reproducción Accidental:</strong> La falta de castración provoca camadas no deseadas que aumentan la población callejera.</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl card">
+          <h3 class="font-bold text-xl mb-3 accent-text">Efectos y Soluciones Éticas</h3>
+          <p class="text-gray-700 leading-relaxed">La sobrepoblación animal en las calles genera **riesgos sanitarios** (como enfermedades zoonóticas), **accidentes de tránsito** y un alto nivel de **sufrimiento animal**. Frente a esto, las políticas éticas y los programas de esterilización han demostrado ser la solución más efectiva:</p>
+          <ul class="list-disc pl-5 mt-3 text-gray-700 space-y-2">
+            <li>Reducen la cantidad de animales abandonados.</li>
+            <li>Mejoran la salud pública.</li>
+            <li>Promueven una convivencia más segura y compasiva.</li>
+          </ul>
+          <p class="text-gray-700 mt-3">Estos programas, cuando se aplican con seguimiento adecuado, generan beneficios sostenibles tanto para las comunidades como para los animales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ayuda" class="route hidden pt-8">
+      <h2 class="text-3xl font-bold mb-6 border-b-2 title-border pb-2">¡Tú Puedes Hacer la Diferencia!</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl card text-center">
+          <h4 class="font-bold text-xl mb-2 accent-text">Adopta Responsablemente</h4>
+          <p class="text-sm text-gray-600 mb-4">Dale un hogar a un animal rescatado en lugar de comprar. Prepárate para el compromiso y los cuidados a largo plazo.</p>
+          <img src="adopta.jpg" alt="Persona abrazando un perro adoptado" class="mx-auto rounded-lg shadow-md" style="width: 180px; height: 180px; object-fit: cover;" />
+        </div>
+        <div class="bg-white p-6 rounded-xl card text-center">
+          <h4 class="font-bold text-xl mb-2 accent-text">Esteriliza a tu Mascota</h4>
+          <p class="text-sm text-gray-600 mb-4">Busca clínicas y jornadas de esterilización; es la medida **más efectiva** para controlar la población y evitar el abandono.</p>
+          <img src="esteriliza.jpg" alt="Ilustración sobre esterilización" class="mx-auto rounded-lg shadow-md" style="width: 180px; height: 180px; object-fit: cover;" />
+        </div>
+        <div class="bg-white p-6 rounded-xl card text-center">
+          <h4 class="font-bold text-xl mb-2 accent-text">Sé Voluntario</h4>
+          <p class="text-sm text-gray-600 mb-4">Participa en rescates, jornadas de vacunación, difusión o ayuda logística de la causa animal.</p>
+          <img src="voluntario.jpg" alt="Voluntarios ayudando animales" class="mx-auto rounded-lg shadow-md" style="width: 180px; height: 180px; object-fit: cover;" />
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl card mt-6">
+        <h3 class="font-bold text-xl mb-3 accent-text">Ideas de Acción Rápida</h3>
+        <ul class="list-disc pl-5 text-lg text-gray-700 space-y-2">
+          <li>**Coloca agua y alimento** en lugares seguros y accesibles para los animales de calle.</li>
+          <li>**Comparte adopciones verificadas** en redes y evita la difusión de animales no verificados o la promoción de la compra.</li>
+          <li>**Apoya económicamente** a refugios y organizaciones con probada transparencia.</li>
+        </ul>
+        <div class="flex justify-center mt-6">
+          <img src="ideas.jpg" alt="Ideas de ayuda" class="rounded-lg shadow-md" style="width: 280px; height: 280px; object-fit: cover;" />
+        </div>
+      </div>
+    </section>
+
+<section id="estadisticas" class="route hidden pt-8">
+  <h2 class="text-3xl font-bold mb-6 border-b-2 title-border pb-2">Datos y Estadísticas Clave (México)</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 text-center">
+    <div class="bg-white p-6 rounded-xl card">
+      <p class="text-sm text-gray-600">Población Estimada de Animales sin Hogar</p>
+      <p class="text-3xl font-extrabold accent-text mt-2">≈ 27.9 Millones</p>
+      <p class="text-xs text-gray-500">(Perros y gatos)</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl card">
+      <p class="text-sm text-gray-600">Porcentaje de Perros Esterilizados</p>
+      <p class="text-3xl font-extrabold accent-text mt-2">≈ 32%</p>
+      <p class="text-xs text-gray-500">(En una ciudad representativa)</p>
+    </div>
+    <div class="bg-white p-6 rounded-xl card">
+      <p class="text-sm text-gray-600">Porcentaje de Gatos Esterilizados</p>
+      <p class="text-3xl font-extrabold accent-text mt-2">≈ 40%</p>
+      <p class="text-xs text-gray-500">(En una ciudad representativa)</p>
+    </div>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl card mt-6">
+    <h3 class="font-bold text-xl mb-3 accent-text">Análisis Detallado de la Situación</h3>
+    <p class="text-gray-700 mb-4">En México, la población de animales en situación de calle ha alcanzado cifras alarmantes. De acuerdo con el Índice de Mascotas sin Hogar 2024 (Mars Petcare), se estima que existen alrededor de **27.9 millones de perros y gatos** viviendo en las calles. Un reporte adicional (OEM, 2024) indica que cerca del **70% de los 28 millones de perros** del país se encuentran en situación de calle, lo que convierte a México en uno de los países con mayor número de animales sin hogar en Latinoamérica.</p>
+
+    <p class="text-gray-700 mb-4">En cuanto a la esterilización, un estudio de Humane Society International México (HSI) en Aguascalientes reveló que solo el **32% de los perros y el 40% de los gatos han sido esterilizados**. Esto evidencia una carencia importante de programas públicos accesibles y una falta de conciencia sobre la tenencia responsable.</p>
+    
+    <p class="text-gray-700 mb-4">Estas cifras demuestran que la **falta de esterilización accesible**, la **desinformación**, el **abandono** y la **reproducción accidental** son las principales causas del incremento de animales callejeros. Las organizaciones protectoras insisten en la necesidad de **campañas permanentes de esterilización, educación y adopción responsable** para mitigar esta grave problemática.</p>
+
+    <h4 class="font-semibold mt-6 text-gray-900">Fuentes Consultadas:</h4>
+    <ul class="list-disc pl-5 text-sm text-gray-600 mt-2">
+      <li>Mars Petcare – Índice de Mascotas sin Hogar 2024 (vía El Imparcial, 19 de agosto de 2024).</li>
+      <li>Organismo Editorial Mexicano (OEM, 2024) – “Día Mundial del Perro: hay 28 millones de perros en México, el 70% en situación de calle”.</li>
+      <li>Humane Society International México (HSI, 2024) – “Encuesta sobre bienestar animal y acceso a la esterilización”.</li>
+    </ul>
+  </div>
+</section>
+
+    <section id="galeria" class="route hidden pt-8">
+      <h2 class="text-3xl font-bold mb-6 border-b-2 title-border pb-2">Galería de Acción y Rescates</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-white rounded-xl card overflow-hidden">
+          <img src="rescate.jpg" alt="Rescate de animales en Azcapotzalco" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2 accent-text">Rescate de 16 Animales en Azcapotzalco</h3>
+            <p class="text-sm text-gray-700 mb-3">La **Brigada de Vigilancia Animal (BVA)** de la Ciudad de México rescató **15 gatos y 1 perro Pitbull** abandonados en jaulas en la colonia Industrial Vallejo. Los animales fueron trasladados a Xochimilco para su atención veterinaria y posterior adopción.</p>
+            <strong class="text-xs text-gray-500 block mb-2">Otros Casos Destacados:</strong>
+            <ul class="list-disc pl-4 text-xs text-gray-600 space-y-1">
+                <li>**Rescate en Coyoacán:** La BVA liberó a una perrita atrapada entre dos muros, realizando una peligrosa operación de rescate.</li>
+                <li>**Proceso de Adopción:** Los animales rescatados reciben tratamiento y se ponen en adopción. El proceso requiere **identificación, comprobante de domicilio y Contrato de Adopción**.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl card overflow-hidden">
+          <img src="esterilizacion.jpg  " alt="Campaña de esterilización" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-lg accent-text">Jornadas de Esterilización</h3>
+            <p class="text-sm text-gray-700">El pasado 10 de octubre, Almoloya de Juárez realizó una exitosa jornada de esterilización gratuita para perros y gatos. Gracias a la labor coordinada de veterinarios y voluntarios, se logró atender a 18 mascotas para combatir la sobrepoblación y el abandono. La iniciativa fue celebrada por la comunidad como un acto de responsabilidad y amor por los animales, reforzando el mensaje de que la esterilización es la herramienta más efectiva para el bienestar animal.</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl card overflow-hidden">
+          <img src="boxer.jpg"Adopción feliz" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-lg accent-text">Historias de Adopción Feliz</h3>
+            <p class="text-sm text-gray-700">Cerca del Nevado de Toluca, en Almoloya de Juárez, un majestuoso bóxer atigrado fue encontrado abandonado, traumatizado y temeroso. Los voluntarios de "Amigo Huellitas" lo rescataron, le brindaron atención y la vital esterilización, poniéndolo en adopción bajo el nombre de "Gris".
+
+A pesar de ser un perro noble, su profunda tristeza lo hacía invisible para la mayoría de los adoptantes. Su destino cambió un sábado, cuando la familia Torres visitó el refugio. La hija, Daniela, se sentó en silencio junto a la reja y tarareó una melodía. Por primera vez, el perro se acercó, estableciendo una conexión instantánea.
+
+Adoptado y rebautizado como Humo, encontró su hogar en Almoloya. Con paciencia y amor, Humo pasó de ser un animal asustado a un compañero juguetón y lleno de vida. Su historia es un poderoso ejemplo para la comunidad de Almoloya de Juárez sobre cómo la adopción responsable transforma vidas y ofrece una segunda oportunidad llena de amor.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    
+    <section id="contacto" class="route hidden pt-8">
+  <h2 class="text-3xl font-bold mb-6 border-b-2 title-border pb-2">Contáctanos</h2>
+  <p class="text-lg text-gray-700 mb-6">
+    Si deseas colaborar, unirte al voluntariado o necesitas reportar un caso urgente de maltrato o abandono animal, utiliza el siguiente formulario.
+  </p>
+
+  <p class="text-lg text-gray-700 mb-6">NUESTRAS REDES SOCIALES:</p>
+            <img src="insta.jpg"  style="width: 180px; height: 180px; object-fit: cover;" />
+
+  <p>
+    <a href="https://www.instagram.com/amigos_huellitasss?igsh=MXc4cHRrMnVpNHZtcA%3D%3D&utm_source=qr" target="_blank" class="text-blue-600 underline">
+      Instagram
+    </a>
+  </p>
+  <p>
+    <img src="face.jpg"  style="width: 180px; height: 180px; object-fit: cover;" />
+    <a href="https://www.facebook.com/share/1TEundH6Gk/" target="_blank" class="text-blue-600 underline">
+      Facebook
+    </a>
+  </p>
+
+  <p class="text-lg text-gray-700 mt-6">NÚMEROS DE CONTACTO:</p>
+  <p>7121807499</p>
+</section>
+
+  </main>
+
+  <footer class="mt-12 bg-gray-900 border-t accent-border py-8">
+    <div class="max-w-6xl mx-auto text-center text-sm text-gray-400">
+      © <span id="year"></span> **Animales de Calle MX** — Hecho con <span class="text-red-500">❤️</span>
+    </div>
+  </footer>
+
+  <script>
+    // Simple router: muestra la sección y marca botón activo
+    const routes = document.querySelectorAll('.route');
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    function showRoute(id){
+      routes.forEach(s => s.classList.toggle('hidden', s.id !== id));
+      navButtons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      if(mobileNav) mobileNav.value = id;
+      window.location.hash = id;
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    navButtons.forEach(b => b.addEventListener('click', ()=> showRoute(b.dataset.target)));
+    document.querySelectorAll('[data-target]').forEach(btn => btn.addEventListener('click', ()=> showRoute(btn.dataset.target)));
+    mobileNav.addEventListener('change', (e)=> showRoute(e.target.value));
+
+    // Inicializar desde hash o inicio
+    const initial = (location.hash && location.hash.replace('#','')) || 'inicio';
+    showRoute(initial);
+  </script>
+</body>
+</html>
